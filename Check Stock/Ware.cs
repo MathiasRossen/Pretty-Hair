@@ -4,25 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Check_Stock
+namespace PrettyHairCore
 {
     public class Ware
     {
-        public int Id { get; set; }
+        public int WareId { get; set; }
         public int Price { get; set; }
         public int Amount { get; set; }
         public string Designation { get; set; }  
         public bool Unsellable { get; set; }
-        public string Description { get; set; }
+        //public string Description { get; set; }
 
         public Ware()
         {
 
         }
 
-        public Ware(int id, int price, int amount, string designation, bool unsellable)
+        public Ware(int wareId, int price, int amount, string designation, bool unsellable)
         {
-            Id = id;
+            WareId = wareId;
             Price = price;
             Amount = amount;
             Designation = designation;
@@ -31,7 +31,19 @@ namespace Check_Stock
 
         public override string ToString()
         {
-            return "id: " + Id + " quantity: " + Amount + " description:" + Description;
+            return "id: " + WareId;// + " quantity: " + Amount + " description:" + Description;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj.ToString() == ToString())
+                return true;
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
         }
     }
 }

@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Check_Stock
+namespace PrettyHairCore
 {
     public class Order
     {
         private int quantity;
 
+        public int OrderId { get; set; }
         public int OrderDate { get; set; }
         public int DeliveryDate { get; set; }
         public int WareNumber { get; set; }
@@ -42,6 +43,12 @@ namespace Check_Stock
             :this(customerNumber, orderDate, deliveryDate, wareNumber)
         {
             this.quantity = quantity;
+        }
+
+        public Order(int orderId, int customerNumber, int orderDate, int deliveryDate, int wareNumber, int quantity)
+            :this(customerNumber, orderDate, deliveryDate, wareNumber, quantity)
+        {
+            OrderId = orderId;
         }
 
         public override string ToString()

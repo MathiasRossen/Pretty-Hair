@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Check_Stock
+namespace PrettyHairCore
 {
     public delegate void MailHandler();
 

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Check_Stock
+namespace PrettyHairCore
 {
-    public class CustomerRepository
+    public class CustomerRepository : ICustomerRepository
     {
         List<Customer> customerList;
 
